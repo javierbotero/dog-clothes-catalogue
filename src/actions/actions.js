@@ -1,11 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { TOKEN, URL, SYMBOL_COMPANIES } from '../constants/constants';
+import {
+  TOKEN,
+  URL,
+  SYMBOL_COMPANIES,
+  FILTER,
+} from '../constants/constants';
 import initCreator from '../helpers/helpers';
 
 const retrieveItems = createAsyncThunk(
   'items/fetchItems',
   async () => {
-    console.log('retrieveItems() Disptached');
     const init = initCreator();
     const response = await fetch(`${URL}${SYMBOL_COMPANIES}?apikey=${TOKEN}`, init)
       .then(data => {
@@ -21,4 +25,12 @@ const retrieveItems = createAsyncThunk(
   },
 );
 
-export default retrieveItems;
+const changeCategory = category => ({
+  type: FILTER,
+  payload: category,
+});
+
+export {
+  retrieveItems,
+  changeCategory,
+};

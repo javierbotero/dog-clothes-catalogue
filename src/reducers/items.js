@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 import sweater1 from '../assets/images/sweater1.jpg';
-import retrieveItems from '../actions/actions';
+import { retrieveItems } from '../actions/actions';
 
 const initialState = {
   status: 'idle',
