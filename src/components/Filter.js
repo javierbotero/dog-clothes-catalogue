@@ -1,19 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CATEGORIES } from '../constants/constants';
+import {
+  CATEGORIES,
+  PICTURES_DIRECTORY,
+} from '../constants/constants';
 
 const Filter = props => {
   const { selectFilter, category, clothes } = props;
   const filterClothes = (clothes, category) => {
-    console.log(clothes, category);
-    const filteredObjects = clothes.filter(element => element.category === category);
+    let filteredObjects;
+    if (category === 'All') {
+      filteredObjects = clothes;
+    } else {
+      filteredObjects = clothes.filter(element => element.category === category);
+    }
+    console.log(filteredObjects);
     const result = filteredObjects.map(obj => (
       <div key={obj.name}>
         {obj.name}
         {obj.category}
         {obj.price}
         {obj.description}
-        {obj.image}
+        {PICTURES_DIRECTORY[obj.image[0]][obj.image[1]]}
       </div>
     ));
     console.log(result);
