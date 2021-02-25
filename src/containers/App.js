@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import Filter from '../components/Filter';
-import { retrieveItems, changeCategory } from '../actions/actions';
 
-const App = () => {
+const App = props => {
   const clothes = useSelector(state => state.items.clothes);
   const statusItems = useSelector(state => state.items.status);
   const category = useSelector(state => state.filter);
   const [hideLoading, setHideLoading] = useState(true);
   const dispatch = useDispatch();
+  const {
+    retrieveItems,
+    changeCategory,
+    categories,
+    picturesDirectory,
+  } = props;
   useEffect(() => {
     if (statusItems === 'pending') {
       setHideLoading(false);
@@ -30,9 +36,18 @@ const App = () => {
         selectFilter={selectFilter}
         category={category}
         clothes={clothes}
+        categories={categories}
+        picturesDirectory={picturesDirectory}
       />
     </div>
   );
+};
+
+App.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  picturesDirectory: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  retrieveItems: PropTypes.func.isRequired,
+  changeCategory: PropTypes.func.isRequired,
 };
 
 export default App;

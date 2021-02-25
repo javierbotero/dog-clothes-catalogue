@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -13,6 +11,9 @@
     "react-redux": "^7.2.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": ["<rootDir>/src/__tests__/test-util"]
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,7 +40,11 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
     "eslint-config-airbnb": "^18.2.1",
+    "msw": "^0.27.0",
+    "react-test-renderer": "^17.0.1",
     "stylelint": "^13.11.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-csstree-validator": "^1.9.0",
