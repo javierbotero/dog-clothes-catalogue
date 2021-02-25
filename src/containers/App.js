@@ -26,7 +26,11 @@ const App = () => {
       <div className={hideLoading ? 'hide' : ''}>
         Loading...
       </div>
-      <Filter selectFilter={selectFilter} category={category} />
+      <Filter
+        selectFilter={selectFilter}
+        category={category}
+        clothes={clothes}
+      />
     </div>
   );
 };
