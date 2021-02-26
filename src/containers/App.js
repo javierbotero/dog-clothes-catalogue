@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Filter from '../components/Filter';
+import Clothe from '../components/Clothe';
 
 const App = props => {
   const clothes = useSelector(state => state.items.clothes);
@@ -29,16 +36,40 @@ const App = props => {
 
   return (
     <div>
-      <div className={hideLoading ? 'hide' : ''}>
-        Loading...
-      </div>
-      <Filter
-        selectFilter={selectFilter}
-        category={category}
-        clothes={clothes}
-        categories={categories}
-        picturesDirectory={picturesDirectory}
-      />
+      <BrowserRouter>
+        <div className={hideLoading ? 'hide' : ''}>
+          Loading...
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to={`/${Math.floor(Math.random() * clothes.length)}`}>Product of The Day</Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/">
+            <Filter
+              selectFilter={selectFilter}
+              category={category}
+              clothes={clothes}
+              categories={categories}
+              picturesDirectory={picturesDirectory}
+            />
+          </Route>
+          <Route
+            exact
+            path="/:id"
+            render={({ match }) => (
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              <Clothe match={match} />
+            )}
+          />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 };

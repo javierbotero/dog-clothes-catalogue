@@ -17,12 +17,12 @@ const Filter = props => {
       filteredObjects = clothes.filter(element => element.category === category);
     }
     const result = filteredObjects.map(obj => (
-      <div key={obj.name}>
-        {obj.name}
-        {obj.category}
-        {obj.price}
-        {obj.description}
-        {picturesDirectory[obj.image[0]][obj.image[1]]}
+      <div key={obj.id}>
+        <h5>{obj.name}</h5>
+        <span>{obj.category}</span>
+        <span>{obj.price}</span>
+        <img src={picturesDirectory[obj.image[0]][obj.image[1]]} alt={obj.name} />
+        <a href={`/${obj.id}`}>{obj.name}</a>
       </div>
     ));
     return result;
@@ -48,7 +48,8 @@ Filter.propTypes = {
     image: PropTypes.arrayOf(oneOfType([
       PropTypes.string.isRequired,
       PropTypes.number.isRequired,
-    ])),
+    ])).isRequired,
+    id: PropTypes.number.isRequired,
   })).isRequired,
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   picturesDirectory: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,

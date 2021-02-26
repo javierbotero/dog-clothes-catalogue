@@ -34,8 +34,9 @@ describe('Testing Filter', () => {
         picturesDirectory={PICTURES_DIRECTORY}
       />,
     );
+    fireEvent.click(screen.queryByRole('select'));
     fireEvent.click(screen.queryByText(clothes[0].category));
-    expect(handler.mockReset.call.length).toBe(1);
+    expect(handler.mock.calls.length).toBe(1);
   });
   it('When use selects a category an element should be with the same text as this category', () => {
     const handler = jest.fn();
