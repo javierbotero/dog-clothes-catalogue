@@ -56,7 +56,7 @@ nav {
 select {
   margin-top: 1em;
   padding: 1em 0;
-  background-color: #D46669;
+  background-color: #d46669;
   color: lightgray;
   border-radius: 5px;
   width: 80%;
@@ -73,31 +73,38 @@ nav ul li {
 }
 
 .degrade-banner {
-  background-image: linear-gradient(to right, #333333, #686868, #333333);
-  background-image: -webkit-repeating-linear-gradient(to right, #333333, #686868, #333333);
-  background-image: -moz-repeating-linear-gradient(to right, #333333, #686868, #333333);
-  background-image: -ms-repeating-linear-gradient(to right, #333333, #686868, #333333);
-  background-image: -o-repeating-linear-gradient(to right, #333333, #686868, #333333);
-  background-image: repeating-linear-gradient(to right, #333333, #686868, #333333);
+  /* stylelint-disable */
+  background-image: linear-gradient(to left, #333, #686868, #333);
+  background-image: -webkit-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: -moz-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: -ms-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: -o-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: repeating-linear-gradient(to left, #333, #686868, #333);
+  /* stylelint-enable */
   min-height: 8em;
 }
 
 header ul {
   display: flex;
   justify-content: center;
-  font: 1em 'Lilita', sans-serif;
   padding: 2em 0;
 }
 
 header ul li {
   margin-right: 10px;
+  font: 1em 'Lilita', sans-serif;
+}
+
+header ul li a {
+  font: 1em 'Lilita', sans-serif;
 }
 
 footer {
   color: lightgray;
 }
 
-.social-media, .info-links {
+.social-media,
+.info-links {
   font: 1em 'Rock', sans-serif;
   display: flex;
   justify-content: space-around;
@@ -143,7 +150,8 @@ footer {
   width: 70%;
 }
 
-.pictures-filter, .picture-banner {
+.pictures-filter,
+.picture-banner {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -162,7 +170,8 @@ footer {
   margin: 0 auto;
 }
 
-.products, .filter {
+.products,
+.filter {
   display: flex;
   flex-wrap: wrap;
 }
@@ -179,7 +188,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 1em 0;
-  font-family: 1em 'Rock', sans-serif;
+  font: 1em 'Rock', sans-serif;
 }
 
 .filter main {
@@ -194,7 +203,7 @@ footer {
 .more-info {
   margin: 1em auto;
   padding: 1em;
-  background-color: #0F817F;
+  background-color: #0f817f;
   color: lightgray;
   border-radius: 5px;
   width: 70%;
@@ -223,7 +232,7 @@ footer {
   border-radius: 15px;
   padding: 1em;
   margin: 1em 0;
-  background-image: linear-gradient(to right, #0F817F, #0f6665, #0F817F);
+  background-image: linear-gradient(to right, #0f817f, #0f6665, #0f817f);
   color: lightgray;
   font: 2em 'Rock', sans-serif;
 }
@@ -234,7 +243,8 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  .divider, #main-banner {
+  .divider,
+  #main-banner {
     flex-direction: column;
   }
 

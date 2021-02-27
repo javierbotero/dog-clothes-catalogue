@@ -43,10 +43,7 @@ const retrieveItems = createAsyncThunk(
         }
         return result;
       }))
-      .catch(err => {
-        console.log(err);
-        return err;
-      });
+      .catch(err => err);
 
     return response;
   },
