@@ -11,33 +11,35 @@ const Clothe = ({ match, picturesDirectory, setHome }) => {
   }, []);
   const clothes = useSelector(state => state.items.clothes);
   const clothe = clothes.find(item => item.id === parseInt(match.params.id, 10));
-  const style = {
-    backgroundImage: `url(${picturesDirectory[clothe.image[0]][clothe.image[1]]})`,
-  };
   return (
     <div className="page clothe">
       <div className="info-dog">
-        <h3>{clothe.name}</h3>
+        <h2>{clothe.name}</h2>
         <h5>{clothe.category}</h5>
         <div>
-          <div style={style} className="picture-banner" />
+          <img src={picturesDirectory[clothe.image[0]][clothe.image[1]]} alt={clothe.name} className="picture-clothe" />
           <span>{clothe.price}</span>
         </div>
-        <div>
+        <div className="description">
           {clothe.description}
         </div>
+        <a className="more-info" href="/">Buy</a>
       </div>
       <div className="divider">
         <div>
-          FREE SHIPPING
-        </div>
-        <div>
-          When your order cover $50.00
+          <div>
+            FREE SHIPPING
+          </div>
+          <div>
+            When your order cover $50.00
+          </div>
         </div>
         <img src={dog} alt="dog" />
       </div>
       <div className="banner-item-page">
+        <h3>This product other dogs find useful too</h3>
         <Banner clothes={clothes} picturesDirectory={picturesDirectory} />
+        <a className="more-info" href="/">Go</a>
       </div>
     </div>
   );

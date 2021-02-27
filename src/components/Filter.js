@@ -27,11 +27,15 @@ const Filter = props => {
       };
       return (
         <div key={obj.id} className="container-product">
-          <h5>{obj.name}</h5>
+          <h3>{obj.name}</h3>
+          Categeory:
           <span>{obj.category}</span>
+          <br />
+          Price:
           <span>{obj.price}</span>
+          <br />
           <div style={style} className="pictures-filter" />
-          <a href={`/${obj.id}`}>{obj.name}</a>
+          <a className="more-info" href={`/${obj.id}`}>More Info</a>
         </div>
       );
     });
@@ -47,8 +51,10 @@ const Filter = props => {
       </main>
       <aside>
         <div>
+          <div>Get an special gift for purchases over $200</div>
           <Banner clothes={clothes} picturesDirectory={picturesDirectory} />
           <Banner clothes={clothes} picturesDirectory={picturesDirectory} />
+          <a className="more-info" href="/">Special Gift</a>
         </div>
       </aside>
     </div>

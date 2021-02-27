@@ -11,7 +11,9 @@ const Banner = props => {
     <div key={item.id}>
       <div style={style} className="picture-banner" />
       <span>{item.price}</span>
+      <br />
       <span>{item.name}</span>
+      <br />
     </div>
   );
 };
