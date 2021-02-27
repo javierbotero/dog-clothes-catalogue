@@ -4,7 +4,6 @@ import {
   clothes,
   CATEGORIES,
   PICTURES_DIRECTORY,
-  fireEvent,
 } from './test-util/test-util';
 import Filter from '../components/Filter';
 
