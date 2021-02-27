@@ -16,6 +16,9 @@ const retrieveItems = createAsyncThunk(
     const categories = Object.keys(PICTURES_DIRECTORY);
     const response = await fetch(`${URL}${SYMBOL_COMPANIES}?apikey=${TOKEN}`, init)
       .then(data => data.json().then(items => {
+        if (!Array.isArray(items)) {
+          throw new Error();
+        }
         const result = [];
         let index = -1;
         for (let i = 0; i < items.length; i += 1) {

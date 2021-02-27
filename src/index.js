@@ -8,6 +8,7 @@ import {
   PICTURES_DIRECTORY,
 } from './constants/constants';
 import { retrieveItems, changeCategory } from './actions/actions';
+import './assets/style/style.css';
 
 ReactDOM.render(
   <Provider store={store}>
