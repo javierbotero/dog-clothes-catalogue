@@ -11,6 +11,7 @@ import Filter from '../components/Filter';
 describe('Testing Filter', () => {
   it('Expects the text All in the screen', () => {
     const handler = jest.fn();
+    const setHome = jest.fn();
     render(
       <Filter
         selectFilter={handler}
@@ -18,28 +19,31 @@ describe('Testing Filter', () => {
         clothes={clothes}
         categories={CATEGORIES}
         picturesDirectory={PICTURES_DIRECTORY}
+        setHome={setHome}
       />,
     );
     expect(screen.getByDisplayValue('All')).toHaveValue('All');
   });
 
-  it('Expects The handler to be called when user clicks a category', () => {
+  it('Expects The text Coats and Jackets text to be on the screen when component has that category', () => {
     const handler = jest.fn();
+    const setHome = jest.fn();
     render(
       <Filter
         selectFilter={handler}
-        category="All"
+        category="Coats and Jackets"
         clothes={clothes}
         categories={CATEGORIES}
         picturesDirectory={PICTURES_DIRECTORY}
+        setHome={setHome}
       />,
     );
-    fireEvent.click(screen.queryByRole('select'));
-    fireEvent.click(screen.queryByText(clothes[0].category));
-    expect(handler.mock.calls.length).toBe(1);
+    const coats = screen.queryAllByText('Coats and Jackets');
+    expect(coats.length).toBeGreaterThan(0);
   });
-  it('When use selects a category an element should be with the same text as this category', () => {
+  it('Makes sure prints anchors with text More Info', () => {
     const handler = jest.fn();
+    const setHome = jest.fn();
     render(
       <Filter
         selectFilter={handler}
@@ -47,13 +51,15 @@ describe('Testing Filter', () => {
         clothes={clothes}
         categories={CATEGORIES}
         picturesDirectory={PICTURES_DIRECTORY}
+        setHome={setHome}
       />,
     );
-    fireEvent.click(screen.queryByText(clothes[0].category));
-    expect(screen.queryByText(clothes[0].category)).toBeInTheDocument();
+    const anchor = screen.queryAllByText('More Info')[0];
+    expect(anchor.innerHTML).toBe('More Info');
   });
   it('Checks div with class products has no elements when a category do not have any', () => {
     const handler = jest.fn();
+    const setHome = jest.fn();
     render(
       <Filter
         selectFilter={handler}
@@ -61,6 +67,7 @@ describe('Testing Filter', () => {
         clothes={clothes}
         categories={CATEGORIES}
         picturesDirectory={PICTURES_DIRECTORY}
+        setHome={setHome}
       />,
     );
     const products = document.querySelector('.products');
@@ -68,6 +75,7 @@ describe('Testing Filter', () => {
   });
   it('Checks div with class products has elements when a category has any', () => {
     const handler = jest.fn();
+    const setHome = jest.fn();
     render(
       <Filter
         selectFilter={handler}
@@ -75,6 +83,7 @@ describe('Testing Filter', () => {
         clothes={clothes}
         categories={CATEGORIES}
         picturesDirectory={PICTURES_DIRECTORY}
+        setHome={setHome}
       />,
     );
     const products = document.querySelector('.products');
