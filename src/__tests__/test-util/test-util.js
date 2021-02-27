@@ -1,7 +1,10 @@
 import '@testing-library/jest-dom';
-import '@testing-library/react';
+import {
+  render, fireEvent, screen,
+} from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
+import '@testing-library/jest-dom/extend-expect';
 
 const FILTER = 'filter/statusFilter';
 const TOKEN = process.env.REACT_APP_TOKEN_FMP;
@@ -62,6 +65,9 @@ export {
   PAJAMA_PICTURES,
   PICTURES_DIRECTORY,
   ADJECTIVES,
+  render,
+  fireEvent,
+  screen,
 };
 
 test('sample', () => {
