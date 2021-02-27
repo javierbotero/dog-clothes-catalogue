@@ -1,6 +1,6 @@
 # Dog Catalog App
 
-This is app is based on a catalog of clothes for dogs. The web app has two types of pages, one page with a list of items that could be filtered by categories and one page for the item details. The app also collects information data from the [API Financial Modeling Grep](https://financialmodelingprep.com/developer/docs/) to display different prices to the items.
+This app is based on a catalog of clothes for dogs. The web app has two types of pages, one page with a list of items that could be filtered by categories and one page for the item details. The app also collects information data from the [API Financial Modeling Grep](https://financialmodelingprep.com/developer/docs/) to display different prices to the items.
 
 ## Live Preview
 
