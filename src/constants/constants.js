@@ -37,6 +37,13 @@ const PICTURES_DIRECTORY = {
   Jerseys: JERSEY_PICTURES,
   Pajamas: PAJAMA_PICTURES,
 };
+const OBJECT_DATA = {
+  token: TOKEN,
+  url: URL,
+  symbolCompanies: SYMBOL_COMPANIES,
+  picturesDirectory: PICTURES_DIRECTORY,
+  adjectives: ADJECTIVES,
+};
 
 export {
   FILTER,
@@ -52,4 +59,5 @@ export {
   PAJAMA_PICTURES,
   PICTURES_DIRECTORY,
   ADJECTIVES,
+  OBJECT_DATA,
 };

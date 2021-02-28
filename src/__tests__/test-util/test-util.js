@@ -2,9 +2,11 @@ import '@testing-library/jest-dom';
 import {
   render, fireEvent, screen,
 } from '@testing-library/react';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import '@testing-library/jest-dom/extend-expect';
+import 'regenerator-runtime/runtime';
 
 const FILTER = 'filter/statusFilter';
 const TOKEN = process.env.REACT_APP_TOKEN_FMP;
@@ -68,6 +70,7 @@ export {
   render,
   fireEvent,
   screen,
+  createAsyncThunk,
 };
 
 test('sample', () => {

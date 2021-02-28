@@ -79,7 +79,7 @@ describe('Testing Filter', () => {
     render(
       <Filter
         selectFilter={handler}
-        category="All"
+        category="Coats and Jackets"
         clothes={clothes}
         categories={CATEGORIES}
         picturesDirectory={PICTURES_DIRECTORY}

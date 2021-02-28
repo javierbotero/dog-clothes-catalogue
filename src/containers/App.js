@@ -13,6 +13,7 @@ import facebook from '../assets/images/icons/facebook.png';
 import credit from '../assets/images/icons/credit.png';
 import phone from '../assets/images/icons/phone.png';
 import Banner from '../components/Banner';
+import { FILTER } from '../constants/constants';
 
 const App = props => {
   const clothes = useSelector(state => state.items.clothes);
@@ -26,6 +27,7 @@ const App = props => {
     changeCategory,
     categories,
     picturesDirectory,
+    objectData,
   } = props;
   useEffect(() => {
     if (statusItems === 'pending') {
@@ -33,10 +35,10 @@ const App = props => {
     }
   }, [statusItems, setHideLoading, clothes, dispatch]);
   if (statusItems === 'idle') {
-    dispatch(retrieveItems());
+    dispatch(retrieveItems(objectData));
   }
   const selectFilter = e => {
-    dispatch(changeCategory(e.target.value));
+    dispatch(changeCategory(e.target.value, FILTER));
   };
 
   return (
@@ -153,6 +155,13 @@ App.propTypes = {
   picturesDirectory: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
   retrieveItems: PropTypes.func.isRequired,
   changeCategory: PropTypes.func.isRequired,
+  objectData: PropTypes.shape({
+    token: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    symbolCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
+    picturesDirectory: PropTypes.objectOf(PropTypes.string).isRequired,
+    adjectives: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
 };
 
 export default App;

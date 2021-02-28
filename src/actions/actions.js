@@ -1,20 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {
-  TOKEN,
-  URL,
-  SYMBOL_COMPANIES,
-  FILTER,
-  PICTURES_DIRECTORY,
-  ADJECTIVES,
-} from '../constants/constants';
 import initCreator from '../helpers/helpers';
 
 const retrieveItems = createAsyncThunk(
   'items/fetchItems',
-  async () => {
+  async objectData => {
     const init = initCreator();
-    const categories = Object.keys(PICTURES_DIRECTORY);
-    const response = await fetch(`${URL}${SYMBOL_COMPANIES}?apikey=${TOKEN}`, init)
+    const categories = Object.keys(objectData.picturesDirectory);
+    const response = await fetch(`${objectData.url}${objectData.symbolCompanies}?apikey=${objectData.token}`, init)
       .then(data => data.json().then(items => {
         if (!Array.isArray(items)) {
           throw new Error();
@@ -23,11 +15,11 @@ const retrieveItems = createAsyncThunk(
         let index = -1;
         for (let i = 0; i < items.length; i += 1) {
           index = index === categories.length - 1 ? 0 : index + 1;
-          const name = `${ADJECTIVES[Math.floor(Math.random() * ADJECTIVES.length)]} ${categories[index]}`;
+          const name = `${objectData.adjectives[Math.floor(Math.random() * objectData.adjectives.length)]} ${categories[index]}`;
           const category = categories[index];
           const image = [
             categories[index],
-            Math.floor(Math.random() * PICTURES_DIRECTORY[categories[index]].length),
+            Math.floor(Math.random() * objectData.picturesDirectory[categories[index]].length),
           ];
           const { price } = items[i];
           const id = i;
@@ -49,8 +41,8 @@ const retrieveItems = createAsyncThunk(
   },
 );
 
-const changeCategory = category => ({
-  type: FILTER,
+const changeCategory = (category, filter) => ({
+  type: filter,
   payload: category,
 });
 
