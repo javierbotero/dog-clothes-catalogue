@@ -9,7 +9,7 @@ describe('Actions', () => {
     deps.fetchMock.restore();
   });
 
-  it('Check the response is an array of objects with price property', async () => {
+  it('Checks the action retrieveItems populates the store correctly', async () => {
     const response = [
       {
         price: 100,
