@@ -6,6 +6,7 @@
     "@babel/eslint-parser": "^7.13.8",
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/user-event": "^12.1.10",
+    "fetch-mock": "^9.11.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -19,7 +20,11 @@
   "jest": {
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/__tests__/test-util"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
@@ -51,7 +56,9 @@
     "@testing-library/react": "^11.2.5",
     "babel-jest": "^26.6.3",
     "eslint-config-airbnb": "^18.2.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.0",
+    "jest-transform-stub": "^2.0.0",
     "msw": "^0.27.0",
     "react-test-renderer": "^17.0.1",
     "redux-mock-store": "^1.5.4",

@@ -1,12 +1,20 @@
+import React from 'react';
 import '@testing-library/jest-dom';
 import {
-  render, fireEvent, screen,
+  render as rtlRender, fireEvent, screen,
 } from '@testing-library/react';
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
+import fetchMock from 'fetch-mock';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import '@testing-library/jest-dom/extend-expect';
 import 'regenerator-runtime/runtime';
+import ShallowRenderer from 'react-test-renderer/shallow';
+import { Provider } from 'react-redux';
+import items from '../../reducers/items';
+import filter from '../../reducers/filter';
 
 const FILTER = 'filter/statusFilter';
 const TOKEN = process.env.REACT_APP_TOKEN_FMP;
@@ -47,6 +55,25 @@ const clothes = [
   },
 ];
 
+const render = (
+  ui,
+  {
+    initialState,
+    store = configureStore({
+      reducer: {
+        items,
+        filter,
+      },
+    }),
+    ...renderOptions
+  } = {},
+) => {
+  const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>;
+  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
+};
+
+const mockStore = configureMockStore([thunk]);
+
 export * from '@testing-library/jest-dom';
 export * from '@testing-library/react';
 
@@ -71,6 +98,11 @@ export {
   fireEvent,
   screen,
   createAsyncThunk,
+  ShallowRenderer,
+  thunk,
+  configureMockStore,
+  fetchMock,
+  mockStore,
 };
 
 test('sample', () => {

@@ -158,8 +158,8 @@ App.propTypes = {
   objectData: PropTypes.shape({
     token: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    symbolCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
-    picturesDirectory: PropTypes.objectOf(PropTypes.string).isRequired,
+    symbolCompanies: PropTypes.string.isRequired,
+    picturesDirectory: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
     adjectives: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };
