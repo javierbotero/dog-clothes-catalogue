@@ -22,21 +22,28 @@ This app is a catalog of clothes for dogs. The web app has two types of pages, o
 To start with the project:
 
 1. Install npm in your machine.
+
 2. Clone [this repository](https://github.com/javierbotero/dog-clothes-catalogue.git)
+
 3. cd inside the project
+
 
 4. Run in the terminal
 ```
   npm i
 ```
 in the terminal to install the dependencies.
+
 5. Go to [API Financial Modeling Grep](https://financialmodelingprep.com/developer/docs/) open an account to get an API key.
+
 6. Make an environmental variable locally named: REACT_APP_TOKEN_FMP=your_tokem_number.
+
 7. Run in the terminal
 ```
   npm test
 ```
 For running all tests.
+
 
 8. Run in the terminal
 ```
@@ -46,7 +53,7 @@ And you will have the dog catalog working locally.
 
 ## Credits
 
-Inspiration in the design of Design idea of Denys Chagaida on [Behance](https://www.behance.net/gallery/24531031/Pimp-my-DOG-Online-store-E-commerse-project)
+Inspiration in the design idea of Denys Chagaida on [Behance](https://www.behance.net/gallery/24531031/Pimp-my-DOG-Online-store-E-commerse-project)
 
 ## Video Explanation
 
