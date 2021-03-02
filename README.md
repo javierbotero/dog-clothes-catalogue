@@ -47,6 +47,10 @@ And you will have the dog catalog working locally.
 
 Inspiration in the design of Design idea of Denys Chagaida on [Behance](https://www.behance.net/gallery/24531031/Pimp-my-DOG-Online-store-E-commerse-project)
 
+## Video Explanation
+
+In this [video](https://www.loom.com/share/a58659fa558747fd88a5d301c7ab576c) I explain the basic structure, data flow, and virtual DOM tools this React & Redux app uses.
+
 ## Author
 
 👤 **Javier Botero**
