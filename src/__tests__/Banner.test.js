@@ -2,8 +2,8 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import Banner from '../components/Banner';
 import renderer from 'react-test-renderer';
+import Banner from '../components/Banner';
 import {
   render,
   PICTURES_DIRECTORY,
