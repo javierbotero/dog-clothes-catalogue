@@ -5,6 +5,7 @@ import {
   clothes,
   CATEGORIES,
   PICTURES_DIRECTORY,
+  renderer,
 } from './test-util/test-util';
 import Filter from '../components/Filter';
 
