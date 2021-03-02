@@ -1,0 +1,266 @@
+/*
+  green: #129997
+  red: #A0010D
+  orange: #FF8E5C
+  blue: #0F817F
+  light-red: #D46669
+  black: #333333
+*/
+
+@font-face {
+  font-family: 'Rock';
+  src: local('Rock'), url(../fonts/RocknRollOne-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lilita';
+  src: local('Lilita'), url(../fonts/LilitaOne-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'), url(../fonts/OpenSans-Light.ttf) format('truetype');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: lightgray;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  border-radius: 10px;
+}
+
+nav {
+  background-color: #129997;
+  color: lightgray;
+  font: 12px 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+}
+
+select {
+  margin-top: 1em;
+  padding: 1em 0;
+  background-color: #d46669;
+  color: lightgray;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+  font: 1em 'Rock', sans-serif;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 1em;
+}
+
+.degrade-banner {
+  /* stylelint-disable */
+  background-image: linear-gradient(to left, #333, #686868, #333);
+  background-image: -webkit-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: -moz-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: -ms-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: -o-repeating-linear-gradient(to left, #333, #686868, #333);
+  background-image: repeating-linear-gradient(to left, #333, #686868, #333);
+  /* stylelint-enable */
+  min-height: 8em;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+header ul li {
+  margin-right: 10px;
+  font: 1em 'Lilita', sans-serif;
+}
+
+header ul li a {
+  font: 1em 'Lilita', sans-serif;
+}
+
+footer {
+  color: lightgray;
+}
+
+.social-media,
+.info-links {
+  font: 1em 'Rock', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  padding: 2em 0;
+}
+
+.social-media div div {
+  display: flex;
+  justify-content: space-around;
+}
+
+#main-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  font: 2em 'Open Sans', sans-serif;
+  color: #129997;
+}
+
+#main-banner div {
+  text-align: center;
+  margin-right: 0.5em;
+  border-radius: 20px;
+}
+
+#main-banner div span {
+  display: none;
+}
+
+#main-banner div img {
+  margin: 0 auto;
+  display: block;
+}
+
+.picture-banner {
+  width: 8em;
+  height: 8em;
+  margin: 10px auto;
+}
+
+.picture-clothe {
+  width: 70%;
+}
+
+.pictures-filter,
+.picture-banner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.hide {
+  display: none;
+}
+
+.icon {
+  width: 30px;
+}
+
+.page {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.products,
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pictures-filter {
+  width: 100%;
+  height: 10em;
+}
+
+.container-product {
+  width: 40%;
+  border: 5px solid transparent;
+  min-height: 20em;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+  font: 1em 'Rock', sans-serif;
+}
+
+.filter main {
+  width: 78%;
+}
+
+.filter aside {
+  font: 1em 'Rock', sans-serif;
+  width: 20%;
+}
+
+.more-info {
+  margin: 1em auto;
+  padding: 1em;
+  background-color: #0f817f;
+  color: lightgray;
+  border-radius: 5px;
+  width: 70%;
+  font: 1em 'Rock', sans-serif;
+  text-align: center;
+}
+
+.info-dog {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.info-dog h2 {
+  font: 2em 'Lilita', sans-serif;
+  margin: 2em 0;
+}
+
+.description {
+  font: 1em 'Rock', sans-serif;
+}
+
+.divider {
+  display: flex;
+  border-radius: 15px;
+  padding: 1em;
+  margin: 1em 0;
+  background-image: linear-gradient(to right, #0f817f, #0f6665, #0f817f);
+  color: lightgray;
+  font: 2em 'Rock', sans-serif;
+}
+
+.banner-item-page {
+  text-align: center;
+  margin: 1em 0;
+}
+
+@media screen and (max-width: 600px) {
+  .divider,
+  #main-banner {
+    flex-direction: column;
+  }
+
+  .container-product {
+    width: 80%;
+  }
+
+  .filter main {
+    width: 100%;
+  }
+
+  aside {
+    display: none;
+  }
+
+  #main-banner div {
+    margin: 0;
+  }
+}

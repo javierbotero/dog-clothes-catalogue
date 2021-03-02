@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Filter renders correctly 1`] = `
+<div
+  className="page filter"
+>
+  <main>
+    <select
+      onChange={[MockFunction]}
+      value="All"
+    >
+      <option
+        value="All"
+      >
+        All
+      </option>
+      <option
+        value="Coats and Jackets"
+      >
+        Coats and Jackets
+      </option>
+      <option
+        value="Pow Protection"
+      >
+        Pow Protection
+      </option>
+      <option
+        value="Sweaters and Hoodies"
+      >
+        Sweaters and Hoodies
+      </option>
+      <option
+        value="Cold Weather Gear"
+      >
+        Cold Weather Gear
+      </option>
+      <option
+        value="Jerseys"
+      >
+        Jerseys
+      </option>
+      <option
+        value="Pajamas"
+      >
+        Pajamas
+      </option>
+    </select>
+    <div
+      className="products"
+    >
+      <div
+        className="container-product"
+      >
+        <h3>
+          product1
+        </h3>
+        Categeory:
+        <span>
+          Coats and Jackets
+        </span>
+        <br />
+        Price:
+        <span>
+          100
+        </span>
+        <br />
+        <div
+          className="pictures-filter"
+          style={
+            Object {
+              "backgroundImage": "url(coat1)",
+            }
+          }
+        />
+        <a
+          className="more-info"
+          href="/2"
+        >
+          More Info
+        </a>
+      </div>
+    </div>
+  </main>
+  <aside>
+    <div>
+      <div>
+        Get an special gift for purchases over $200
+      </div>
+      <div>
+        <div
+          className="picture-banner"
+          style={
+            Object {
+              "backgroundImage": "url(coat1)",
+            }
+          }
+        />
+        <span>
+          100
+        </span>
+        <br />
+        <span>
+          product1
+        </span>
+        <br />
+      </div>
+      <div>
+        <div
+          className="picture-banner"
+          style={
+            Object {
+              "backgroundImage": "url(coat1)",
+            }
+          }
+        />
+        <span>
+          100
+        </span>
+        <br />
+        <span>
+          product1
+        </span>
+        <br />
+      </div>
+      <a
+        className="more-info"
+        href="/"
+      >
+        Special Gift
+      </a>
+    </div>
+  </aside>
+</div>
+`;
