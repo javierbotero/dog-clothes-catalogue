@@ -1,6 +1,5 @@
 import { rest } from 'msw';
 import {
-  URL,
   SYMBOL_COMPANIES,
   TOKEN,
 } from '../constants/constants';

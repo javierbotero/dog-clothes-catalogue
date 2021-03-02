@@ -17,7 +17,6 @@ import { Provider, useSelector } from 'react-redux';
 import items from '../../reducers/items';
 import filter from '../../reducers/filter';
 
-
 const FILTER = 'filter/statusFilter';
 const TOKEN = process.env.REACT_APP_TOKEN_FMP;
 const URL = 'https://financialmodelingprep.com/api/v3/quote/';
@@ -71,6 +70,7 @@ const render = (
     ...renderOptions
   } = {},
 ) => {
+  // eslint-disable-next-line react/prop-types
   const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>;
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 };
