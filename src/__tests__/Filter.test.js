@@ -5,6 +5,7 @@ import {
   clothes,
   CATEGORIES,
   PICTURES_DIRECTORY,
+  renderer,
 } from './test-util/test-util';
 import Filter from '../components/Filter';
 
@@ -88,5 +89,21 @@ describe('Testing Filter', () => {
     );
     const products = document.querySelector('.products');
     expect(products).not.toBeEmptyDOMElement();
+  });
+  it('renders correctly', () => {
+    const handler = jest.fn();
+    const setHome = jest.fn();
+    const tree = renderer
+      .create(
+        <Filter
+          selectFilter={handler}
+          category="All"
+          clothes={clothes}
+          categories={CATEGORIES}
+          picturesDirectory={PICTURES_DIRECTORY}
+          setHome={setHome}
+        />,
+      ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

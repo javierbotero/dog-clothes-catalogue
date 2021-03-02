@@ -39,20 +39,12 @@ const PICTURES_DIRECTORY = {
 };
 const clothes = [
   {
-    name: 'product2',
-    category: 'Pow Protection',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-    image: ['Jerseys', 1],
-    id: 2,
-  },
-  {
     name: 'product1',
     category: 'Coats and Jackets',
     price: 100,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-    image: ['Coats and Jackets', 1],
-    id: 1,
+    image: ['Coats and Jackets', 0],
+    id: 2,
   },
 ];
 const match = { params: { id: 0 } };
