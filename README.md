@@ -37,6 +37,7 @@ in the terminal to install the dependencies.
   npm test
 ```
 For running all tests.
+
 8. Run in the terminal
 ```
   npm start
